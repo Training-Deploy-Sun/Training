@@ -56,8 +56,6 @@ task('build-assets', function () {
 task('clear-config', [
     'artisan:cache:clear',
     'artisan:config:cache',
-    'artisan:view:clear',
-    'artisan:view:cache',
     'artisan:migrate',
 ]);
 
