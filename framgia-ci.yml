@@ -45,6 +45,12 @@ test:
       - php -dzend_extension=xdebug.so vendor/bin/phpunit
         --coverage-clover=.framgia-ci-reports/coverage-clover.xml
         --coverage-html=.framgia-ci-reports/coverage
+deploy:
+  rocketeer:
+    image: framgiaciteam/deployer:2.0
+    when:
+      branch: develop
+    run: php rocketeer.phar deploy --on=staging --no-interaction
 cache:
   composer:
     folder: vendor
