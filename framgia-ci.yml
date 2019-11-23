@@ -47,10 +47,10 @@ test:
         --coverage-html=.framgia-ci-reports/coverage
 deploy:
   rocketeer:
-    image: framgiaciteam/deployer:2.0
+    image: framgiaciteam/deb-deploy:latest
     when:
       branch: develop
-    run: php rocketeer.phar deploy --on=staging --no-interaction
+    run: dep deploy development -vv
 cache:
   composer:
     folder: vendor
