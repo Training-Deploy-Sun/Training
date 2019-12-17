@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/test_auto', function () {
-    return view('welcome');
+    return 1234455;
 });
